@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Status Predictor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      form {
+        margin-bottom: 20px; /* Add space below the form */
+      }
+
+      label,
+      input {
+        margin-bottom: 10px; /* Add space between each label-input pair */
+        display: block; /* Display labels and inputs on separate lines */
+      }
+
+      button {
+        margin-top: 10px;
+        font-size: 16px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Employee Status Predictor</h1>
+    <form method="POST" action="/predict">
+      <label for="Education">Education:</label>
+      <input type="text" id="Education" name="Education" required /><br />
+
+      <label for="Joining_Year">Joining Year:</label>
+      <input type="text" id="Joining_Year" name="Joining_Year" required /><br />
+
+      <label for="City">City:</label>
+      <input type="text" id="City" name="City" required /><br />
+
+      <label for="Payment_Tier">Payment Tier:</label>
+      <input type="text" id="Payment_Tier" name="Payment_Tier" required /><br />
+
+      <label for="Age">Age:</label>
+      <input type="text" id="Age" name="Age" required /><br />
+
+      <label for="Gender">Gender:</label>
+      <input type="text" id="Gender" name="Gender" required /><br />
+
+      <label for="benched">Ever Benched:</label>
+      <input type="text" id="benched" name="benched" required /><br />
+
+      <label for="Experience">Experience:</label>
+      <input type="text" id="Experience" name="Experience" required /><br />
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+
+      {% if out %}
+         <h2>{{ out }}</h2>
+      {% endif %}
+
+    </form>
+  </body>
+</html>
